@@ -191,25 +191,25 @@
               <i class="devicon-react-original-wordmark"  title="ReactJS" id="reactjs" onmouseover="changeReactOver()" onmouseout="changeReactOut()"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-bootstrap" title="Bootstrap"></i>
+              <i class="devicons devicons-bootstrap" title="Bootstrap" id="bootstrap" onmouseover="changeBootstrapOver()" onmouseout="changeBootstrapOut()"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-grunt" title="Grunt"></i>
+              <i class="devicons devicons-grunt" title="Grunt" id="grunt" onmouseover="changeGruntOver()" onmouseout="changeGruntOut()"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-gulp"  title="Gulp"></i>
+              <i class="devicons devicons-gulp"  title="Gulp" id="gulp" onmouseover="changeGulpOver()" onmouseout="changeGulpOut()"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicons devicons-npm" title="NPM"></i>
+              <i class="devicons devicons-npm" title="NPM" id="npm" onmouseover="changeNpmOver()" onmouseout="changeNpmOut()"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicon-webpack-plain" title="Webpack"></i>
+              <i class="devicon-webpack-plain" title="Webpack" id="webpack" onmouseover="changeWebpackOver()" onmouseout="changeWebpackOut()"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicon-docker-plain-wordmark"  title="Docker"></i>
+              <i class="devicon-docker-plain-wordmark"  title="Docker" id="docker" onmouseover="changeDockerOver()" onmouseout="changeDockerOut()"></i>
             </li>
             <li class="list-inline-item">
-              <i class="devicon-mongodb-plain-wordmark"  title="MongoDB"></i>
+              <i class="devicon-mongodb-plain-wordmark"  title="MongoDB" id="mongodb" onmouseover="changeMongoOver()" onmouseout="changeMongoOut()"></i>
             </li>
           </ul>
 
@@ -302,6 +302,67 @@
       function changeReactOut() {
         document.getElementById('reactjs').classList.remove("devicon-react-original", "colored");
         document.getElementById('reactjs').classList.add("devicon-react-original-wordmark");
+      }
+
+      function changeBootstrapOver() {
+        document.getElementById('bootstrap').classList.remove("devicons", "devicons-bootstrap");
+        document.getElementById('bootstrap').classList.add("devicon-bootstrap-plain", "colored");
+      }
+      function changeBootstrapOut() {
+        document.getElementById('bootstrap').classList.remove("devicon-bootstrap-plain", "colored");
+        document.getElementById('bootstrap').classList.add("devicons", "devicons-bootstrap");
+      }
+
+      function changeGruntOver() {
+        document.getElementById('grunt').classList.remove("devicons", "devicons-grunt");
+        document.getElementById('grunt').classList.add("devicon-grunt-plain", "colored");
+      }
+      function changeGruntOut() {
+        document.getElementById('grunt').classList.remove("devicon-grunt-plain", "colored");
+        document.getElementById('grunt').classList.add("devicons", "devicons-grunt");
+      }
+
+      function changeGulpOver() {
+        document.getElementById('gulp').classList.remove("devicons", "devicons-gulp");
+        document.getElementById('gulp').classList.add("devicon-gulp-plain", "colored");
+      }
+      function changeGulpOut() {
+        document.getElementById('gulp').classList.remove("devicon-gulp-plain", "colored");
+        document.getElementById('gulp').classList.add("devicons", "devicons-gulp");
+      }
+
+      function changeNpmOver() {
+        document.getElementById('npm').style.color = "#cb3837";
+      }
+      function changeNpmOut() {
+        document.getElementById('npm').style.color = "#868e96";
+      }
+      
+      function changeWebpackOver() {
+        document.getElementById('webpack').classList.remove("devicon-webpack-plain");
+        document.getElementById('webpack').classList.add("devicon-webpack-plain", "colored");
+      }
+      function changeWebpackOut() {
+        document.getElementById('webpack').classList.remove("devicon-webpack-plain", "colored");
+        document.getElementById('webpack').classList.add("devicon-webpack-plain");
+      }
+      
+      function changeDockerOver() {
+        document.getElementById('docker').classList.remove("devicon-docker-plain-wordmark");
+        document.getElementById('docker').classList.add("devicon-docker-plain-wordmark", "colored");
+      }
+      function changeDockerOut() {
+        document.getElementById('docker').classList.remove("devicon-docker-plain-wordmark", "colored");
+        document.getElementById('docker').classList.add("devicon-docker-plain-wordmark");
+      }
+
+      function changeMongoOver() {
+        document.getElementById('mongodb').classList.remove("devicon-mongodb-plain-wordmark");
+        document.getElementById('mongodb').classList.add("devicon-mongodb-plain-wordmark", "colored");
+      }
+      function changeMongoOut() {
+        document.getElementById('mongodb').classList.remove("devicon-mongodb-plain-wordmark", "colored");
+        document.getElementById('mongodb').classList.add("devicon-mongodb-plain-wordmark");
       }
 
     </script>
