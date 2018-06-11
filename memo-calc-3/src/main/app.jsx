@@ -6,7 +6,7 @@ import React from 'react'
 import Calculator from '../calculator/calculator'
 
 export default props => (
-    <div className='container'>
+    <div>
         <Calculator />
     </div>
 )
