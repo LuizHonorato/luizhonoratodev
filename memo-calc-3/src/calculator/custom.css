@@ -9,6 +9,7 @@ body {
     height: 54%;
     margin: auto;
     border-radius: 5px;
+    border-bottom: 3px solid #ABB2B9;
 }
 
 .title-page {
