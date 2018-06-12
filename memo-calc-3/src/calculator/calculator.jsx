@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
 import Grid from '../template/grid'
-import {addNum, clear, equal, back} from './calculatorActions'
+import {addNum, clear, equal, back, convertSign} from './calculatorActions'
 
 const Calculator = (props) => {
     const btns = props.btns || []
@@ -29,6 +29,10 @@ const Calculator = (props) => {
                             return(
                                 <span className='calc-button clear-button' key={key} onClick={props.clear}>{item}</span>
                             )
+                        } else if(item == "±"){
+                            return(
+                                <span className='calc-button' key={key} onClick={() => props.convertSign(props.calculator.number)}>{item}</span>
+                            )
                         } else if(item == "Back"){
                             return (
                                 <span className='calc-button' key={key} onClick={() => props.back(props.calculator.number)}>{item}</span>
@@ -51,5 +55,5 @@ const Calculator = (props) => {
 }
 
 const mapStateToProps = state => ({calculator: state.calculator, btns: state.calculator.btns})
-const mapDispatchToProps = dispatch => bindActionCreators({addNum, clear, equal, back}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({addNum, clear, equal, back, convertSign}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Calculator)

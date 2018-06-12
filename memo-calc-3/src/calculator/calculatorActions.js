@@ -14,6 +14,12 @@ export const back = (number) => {
     }
 }
 
+export const convertSign = (number) => {
+    return { type: 'SIGN_CONVERTED',
+             payload: number
+    }
+}
+
 export const equal = (number) => {
     return { type: 'IS_EQUAL',
              payload: number 

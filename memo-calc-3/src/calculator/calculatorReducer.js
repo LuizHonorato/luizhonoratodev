@@ -12,6 +12,9 @@ export default (state = INITIAL_STATE, action) => {
         case 'BACK_PRESSED':
             var str = action.payload
             return {...state, number: str.slice(0, -1)}
+        case 'SIGN_CONVERTED':
+            var num = parseInt(action.payload)
+            return {...state, number: -Math.abs(num)}
         default:
             return state
     }
