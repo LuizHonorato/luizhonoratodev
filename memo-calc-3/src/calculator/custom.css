@@ -6,8 +6,17 @@ h3 {
     font-weight: bold;
 }
 
+.btnDelete {
+    font-size: 24px;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
 b {
     font-size: 30px;
+    cursor: pointer;
+    border: 2px solid #ABB2B9;
+    border-radius: 5px;
 }
 
 .box-calculator {

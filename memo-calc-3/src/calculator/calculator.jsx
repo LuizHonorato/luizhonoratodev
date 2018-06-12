@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
 import Grid from '../template/grid'
-import {addNum, clear, equal, back, convertSign} from './calculatorActions'
+import {addNum, clear, equal, back, convertSign, delItemMemory} from './calculatorActions'
 
 const Calculator = (props) => {
     const btns = props.btns || []
@@ -17,16 +17,18 @@ const Calculator = (props) => {
         <div className='box-calculator'>
             <div className='row'>
                 <Grid cols='12 9 7'>
-                    <input type="text" className="calc-area" value={props.calculator.number} onChange={props.addNum} />
+                    <input type="text" className="calc-area" value={props.calculator.number} readOnly={true}/>
                 </Grid>
                 <Grid cols='12 9 5'>
                     <h3>Memória</h3>
-                    <p>{
-                        operations.map((item,key) => {
+                    {operations.map((item,key) => {
                         return (
-                            <b key={key}>{item}</b>
+                            <div key={key}>
+                                <b>{item}</b>
+                                <i className={'fa fa-trash-o btnDelete'} onClick={props.delItemMemory}></i>
+                            </div>
                         )
-                    })}</p>
+                    })}
 
                 </Grid>
             </div>
@@ -63,5 +65,5 @@ const Calculator = (props) => {
 }
 
 const mapStateToProps = state => ({calculator: state.calculator, btns: state.calculator.btns, operations: state.calculator.operations})
-const mapDispatchToProps = dispatch => bindActionCreators({addNum, clear, equal, back, convertSign}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({addNum, clear, equal, back, convertSign, delItemMemory}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Calculator)
