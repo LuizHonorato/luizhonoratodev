@@ -7,6 +7,7 @@ import {addNum, clear, equal, back, convertSign} from './calculatorActions'
 
 const Calculator = (props) => {
     const btns = props.btns || []
+    const operations = props.operations || []
 
     return(
     <div className='container'>
@@ -20,6 +21,13 @@ const Calculator = (props) => {
                 </Grid>
                 <Grid cols='12 9 5'>
                     <h3>Memória</h3>
+                    <p>{
+                        operations.map((item,key) => {
+                        return (
+                            <b key={key}>{item}</b>
+                        )
+                    })}</p>
+
                 </Grid>
             </div>
             <div className='row'>
@@ -54,6 +62,6 @@ const Calculator = (props) => {
     )
 }
 
-const mapStateToProps = state => ({calculator: state.calculator, btns: state.calculator.btns})
+const mapStateToProps = state => ({calculator: state.calculator, btns: state.calculator.btns, operations: state.calculator.operations})
 const mapDispatchToProps = dispatch => bindActionCreators({addNum, clear, equal, back, convertSign}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Calculator)
