@@ -9,8 +9,8 @@ export default (state = INITIAL_STATE, action) => {
         case 'DISPLAY_CLEAR':
             return {...state, number: 0}
         case 'IS_EQUAL':
-            state.operations = [state.number.toString()]
-            return {...state, number: eval(action.payload).toString(), operations: state.operations}
+            state.operations.push(state.number.toString())
+            return {...state, number: eval(action.payload).toString(), operations: state.operations } 
         case 'BACK_PRESSED':
             var str = action.payload
             return {...state, number: str.slice(0, -1)}
