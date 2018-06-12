@@ -2,6 +2,10 @@ body {
     background-color: #85C1E9
 }
 
+h3 {
+    font-weight: bold;
+}
+
 .box-calculator {
     background: #D5D8DC;
     width: 100%;
