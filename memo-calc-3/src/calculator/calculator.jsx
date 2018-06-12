@@ -3,7 +3,9 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
 import Grid from '../template/grid'
-import {key1, key2, key3, key4, key5, key6, key7, key8, key9, key0, clear} from './calculatorActions'
+import {key1, key2, key3, key4, key5, key6, key7, key8, key9, key0, clear, changeDisplay} from './calculatorActions'
+
+const btns = ["±", "%", "Back", "C", "7", "8", "9", "+", "4", "5", "6", "-", "1", "2", "3", "/", "0", ".", "=", "*"]
 
 const Calculator = (props) => (
     <div className='container'>
@@ -13,7 +15,7 @@ const Calculator = (props) => (
         <div className='box-calculator'>
             <div className='row'>
                 <Grid cols='12 9 7'>
-                    <input type="text" className="calc-area" value={props.calculator.number} />
+                    <input type="text" className="calc-area" value={props.calculator.number} onChange={props.changeDisplay} />
                 </Grid>
                 <Grid cols='12 9 5'>
                     <p>Memória</p>
@@ -52,5 +54,5 @@ const Calculator = (props) => (
 )
 
 const mapStateToProps = state => ({calculator: state.calculator})
-const mapDispatchToProps = dispatch => bindActionCreators({key1, key2, key3, key4, key5, key6, key7, key8, key9, key0, clear}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({key1, key2, key3, key4, key5, key6, key7, key8, key9, key0, clear, changeDisplay}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Calculator)

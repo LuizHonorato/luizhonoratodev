@@ -1,7 +1,9 @@
 export function key1(event) {
-    return {
-        type: 'KEY_1_PRESSED'
-    }
+    return [{
+        type: 'KEY_1_PRESSED',
+        payload: event.target.item
+
+    }]
 }
 
 export function key2(event) {
@@ -58,8 +60,11 @@ export function key0(event) {
     }
 }
 
-export function changeDisplay() {
-    
+export function changeDisplay(event) {
+    return [{
+        type: 'DISPLAY_CHANGED',
+        payload: event.target.value
+    }]
 }
 
 export function clear() {
