@@ -12,7 +12,7 @@ export default (state = INITIAL_STATE, action) => {
             if (state.operations.length < 8) {
                 state.operations.push(state.number.toString())
             } else {
-                alert('Por favor, exclua um item da memória da calculadora')
+                alert('Por favor, exclua um item da memória da calculadora.')
             }
             return {...state, number: eval(action.payload).toString(), operations: state.operations } 
         case 'BACK_PRESSED':

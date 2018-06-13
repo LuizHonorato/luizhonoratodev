@@ -12,7 +12,7 @@ const Calculator = (props) => {
     return(
     <div className='container'>
         <div className='row text-center'>
-            <h2 className='title-page'>MemoCalc3</h2>
+            <h2 className='title-page'>MemoCalc8</h2>
         </div>
         <div className='box-calculator'>
             <div className='row'>
