@@ -37,6 +37,7 @@ h2 {
   font-weight: 500;
   font-family: 'Saira Extra Condensed', serif;
   font-size: 1.35rem;
+  margin-bottom: 10px;
 }
 
 .list-social-icons a {
@@ -144,6 +145,20 @@ section.resume-section .resume-item .resume-date {
 
 .email {
   color: #008744 !important;
+}
+
+#app {
+  max-width: 100px;
+  height: 100px;
+  float: left;
+}
+
+.btn-apps {
+  background-color: white; 
+  color: #3498DB; 
+  font-weight: bold; 
+  border: 2px solid #3498DB; 
+  margin: 4px;
 }
 /*
 a:hover, a:focus, a:active {
