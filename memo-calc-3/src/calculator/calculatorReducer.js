@@ -1,3 +1,6 @@
+import toastr from 'toastr'
+import 'modules/toastr/build/toastr.min.css'
+
 const INITIAL_STATE = {number: 0,
                        btns: ["±","%","Back","C","7","8","9","+","4","5","6","-","1","2","3","/","0",".","=","*"],
                        operations: [] }
@@ -12,7 +15,7 @@ export default (state = INITIAL_STATE, action) => {
             if (state.operations.length < 8) {
                 state.operations.push(state.number.toString())
             } else {
-                alert('Por favor, exclua um item da memória da calculadora.')
+                toastr.warning('Por favor, exclua um item da memória da calculadora para armazenar mais cálculos.', 'Atenção!')
             }
             return {...state, number: eval(action.payload).toString(), operations: state.operations } 
         case 'BACK_PRESSED':

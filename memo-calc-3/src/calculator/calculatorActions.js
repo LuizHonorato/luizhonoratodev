@@ -23,7 +23,7 @@ export const convertSign = (number) => {
 export const equal = (number) => {
     return { type: 'IS_EQUAL',
              payload: number 
-    }
+            }
 }
 
 export const recall = (number) => {
