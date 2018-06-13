@@ -26,8 +26,14 @@ export const equal = (number) => {
     }
 }
 
-export const delItemMemory = () => {
-    console.log('Item excluído.')
-    return { type: 'MEMO_ITEM_DELETED'
+export const recall = (number) => {
+    return { type: 'RECALL_MATH',
+             payload: number 
+    }
+}
+
+export const delItemMemory = (key) => {
+    return { type: 'MEMO_ITEM_DELETED',
+             payload: key
     }
 }

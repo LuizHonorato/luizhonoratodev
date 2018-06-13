@@ -19,14 +19,34 @@ b {
     border-radius: 5px;
 }
 
+.container {
+    content: "";
+    clear: both;
+    display: table; 
+    width: 640px;
+    height: 400px;
+}
+
 .box-calculator {
     background: #D5D8DC;
-    width: 380px;
+    width: 53%;
     position: relative;
-    height: 345px;
+    height: 400px;
     margin: auto;
     border-radius: 5px;
     border-bottom: 3px solid #ABB2B9;
+    float: left;
+}
+
+.box-memory {
+    background: #D5D8DC;
+    width: 47%;
+    position: relative;
+    height: 400px;
+    margin: auto;
+    border-radius: 5px;
+    border-bottom: 3px solid #ABB2B9;
+    float: left;
 }
 
 .title-page {
@@ -36,19 +56,13 @@ b {
 .calc-area {
     margin: 10px;
     height: 100px;
-    width: 95%;
+    width: 93%;
     text-align: right;
     font-size: 50px;
     font-weight: bold;
     border-radius: 5px;
     padding-right: 10px;
     border: 3px solid #ABB2B9;
-}
-
-.button-area
-
-.memory-area {
-    height: 500px;
 }
 
 .calc-button {
@@ -62,6 +76,7 @@ b {
     color: #2c3e50;
     margin: 10px;
     float: left;
+    position: relative;
     font-size: 25px;
     font-weight: bold;
     border-bottom: 3px solid #ABB2B9;

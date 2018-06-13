@@ -9,7 +9,11 @@ export default (state = INITIAL_STATE, action) => {
         case 'DISPLAY_CLEAR':
             return {...state, number: 0}
         case 'IS_EQUAL':
-            state.operations.push(state.number.toString())
+            if (state.operations.length < 8) {
+                state.operations.push(state.number.toString())
+            } else {
+                alert('Por favor, exclua um item da memória da calculadora')
+            }
             return {...state, number: eval(action.payload).toString(), operations: state.operations } 
         case 'BACK_PRESSED':
             var str = action.payload
@@ -17,6 +21,10 @@ export default (state = INITIAL_STATE, action) => {
         case 'SIGN_CONVERTED':
             var num = parseInt(action.payload)
             return {...state, number: -Math.abs(num)}
+        case 'RECALL_MATH':
+            return {...state, number: eval(action.payload).toString()}
+        case 'MEMO_ITEM_DELETED':
+            return {...state, operations: [...state.operations.slice(0, action.payload), ...state.operations.slice(action.payload + 1)]}
         default:
             return state
     }

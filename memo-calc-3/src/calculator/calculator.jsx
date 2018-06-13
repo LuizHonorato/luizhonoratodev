@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
 import Grid from '../template/grid'
-import {addNum, clear, equal, back, convertSign, delItemMemory} from './calculatorActions'
+import {addNum, clear, equal, back, convertSign, recall, delItemMemory} from './calculatorActions'
 
 const Calculator = (props) => {
     const btns = props.btns || []
@@ -47,24 +47,26 @@ const Calculator = (props) => {
                     })}
                 </Grid>
             </div>
+        </div>
+        <div className='box-memory'>
             <div className='row'>
-                <Grid cols='12 9 5'>
+                <Grid cols='12 9 12'>
                     <h3>Memória</h3>
                         {operations.map((item,key) => {
                             return (
                                 <div key={key}>
-                                    <b>{item}</b>
-                                    <i className={'fa fa-trash-o btnDelete'} onClick={props.delItemMemory}></i>
+                                    <b onClick={() => props.recall(item)}>{item}</b>
+                                    <i className={'fa fa-trash-o btnDelete'} onClick={() => props.delItemMemory(key)}></i>
                                 </div>
                             )
                         })}
                 </Grid>
-            </div>
+            </div>          
         </div>
     </div>
     )
 }
 
 const mapStateToProps = state => ({calculator: state.calculator, btns: state.calculator.btns, operations: state.calculator.operations})
-const mapDispatchToProps = dispatch => bindActionCreators({addNum, clear, equal, back, convertSign, delItemMemory}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({addNum, clear, equal, back, convertSign, recall, delItemMemory}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Calculator)
