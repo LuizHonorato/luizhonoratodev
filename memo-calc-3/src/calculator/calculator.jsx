@@ -10,19 +10,18 @@ const Calculator = (props) => {
     const operations = props.operations || []
 
     return(
-    <div>
     <div className='container'>
         <div className='row text-center'>
             <h2 className='title-page'>MemoCalc3</h2>
         </div>
         <div className='box-calculator'>
             <div className='row'>
-                <Grid cols='12 10 12'>
+                <Grid cols='12 9 12'>
                     <input type="text" className="calc-area" value={props.calculator.number} readOnly={true}/>
                 </Grid>
             </div>
             <div className='row'>
-                <Grid cols='12 10 12'>
+                <Grid cols='12 9 12'>
                     {btns.map((item, key) => {
                         if(item == "C"){
                             return(
@@ -48,23 +47,20 @@ const Calculator = (props) => {
                     })}
                 </Grid>
             </div>
-        </div>
-    </div>
-    <div className='container'>
-        <div className='row'>
-        <Grid cols='12 9 5'>
-                <h3>Memória</h3>
-                    {operations.map((item,key) => {
-                        return (
-                            <div key={key}>
-                                <b>{item}</b>
-                                <i className={'fa fa-trash-o btnDelete'} onClick={props.delItemMemory}></i>
-                            </div>
-                        )
-                    })}
+            <div className='row'>
+                <Grid cols='12 9 5'>
+                    <h3>Memória</h3>
+                        {operations.map((item,key) => {
+                            return (
+                                <div key={key}>
+                                    <b>{item}</b>
+                                    <i className={'fa fa-trash-o btnDelete'} onClick={props.delItemMemory}></i>
+                                </div>
+                            )
+                        })}
                 </Grid>
+            </div>
         </div>
-    </div>
     </div>
     )
 }
