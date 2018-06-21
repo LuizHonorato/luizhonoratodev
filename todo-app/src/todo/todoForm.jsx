@@ -12,9 +12,9 @@ class TodoForm extends Component {
         this.keyHandler = this.keyHandler.bind(this)
     }
 
-    componentWillMount() {
+    /*componentWillMount() {
         this.props.search()
-    }
+    }*/
 
     keyHandler(e) {
         const {add, search, description, clear} = this.props
