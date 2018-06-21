@@ -1,4 +1,4 @@
-const INITIAL_STATE = {description: '', list: [], done: false }
+const INITIAL_STATE = {id: '', description: '', list: [], done: false }
 
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
@@ -7,7 +7,7 @@ export default (state = INITIAL_STATE, action) => {
         case 'TASK_ADDED':
             return {...state, list: [...state.list, {id: action.id, description: state.description, done: state.done }]}
         case 'MARKED_AS_DONE':
-            return state.list.map(todo => (todo.id === action.id) ? {...todo, done: !todo.done}: todo)
+            return {...state}
         case 'TODO_SEARCHED':
             return {...state, list: action.payload}
         case 'TODO_CLEAR':
