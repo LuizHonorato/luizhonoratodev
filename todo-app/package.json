@@ -1,8 +1,8 @@
 {
   "name": "todo-app",
   "version": "1.0.0",
-  "description": "App Lista de Tarefas",
-  "main": "index.jsx",
+  "description": "Aplicativo para cadastro de tarefas.",
+  "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --progress --colors --inline --hot --open",
     "production": "webpack --progress -p"
@@ -10,6 +10,7 @@
   "author": "Luiz Honorato",
   "license": "ISC",
   "devDependencies": {
+    "axios": "^0.15.3",
     "babel-core": "^6.22.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-react-html-attrs": "^2.0.0",
