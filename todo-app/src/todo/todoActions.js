@@ -10,15 +10,15 @@ export const search = () => {
 }
 
 export const add = (description) => {
-    return { type: 'TASK_ADDED', id: nextTodoId++, description }
+    return [{ type: 'TASK_ADDED' }, clear()]
  }
 
  export const markAsDone = (id) => {
     return { type: 'MARKED_AS_DONE', id }
  }
 
- export const markAsPending = (todo) => {
-     
+ export const markAsPending = (id) => {
+    return { type: 'MARKED_AS_PENDING', id }
  }
 
  export const remove = (todo) => {
