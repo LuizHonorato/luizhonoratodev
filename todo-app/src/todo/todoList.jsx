@@ -9,18 +9,18 @@ const TodoList = props => {
 
     const renderRows = () => {
         const list = props.list || []
-        return list.map(todo => (
-            <tr key={todo.id}>
+        return list.map((todo,index) => (
+            <tr key={index}>
                 <td className={todo.done ? 'markedAsDone' : ''}>{todo.description}</td>
                 <td>
                     <IconButton style='success' icon='check' hide={todo.done}
-                        onClick={() => props.markAsDone(todo.id)}></IconButton>
+                        onClick={() => props.markAsDone(index)}></IconButton>
 
                     <IconButton style='warning' icon='undo' hide={!todo.done}
-                        onClick={() => props.markAsPending(todo.id)}></IconButton>
+                        onClick={() => props.markAsPending(index)}></IconButton>
 
                     <IconButton style='danger' icon='trash-o' hide={!todo.done}
-                        onClick={() => props.remove(todo.id)}></IconButton>
+                        onClick={() => props.remove(index)}></IconButton>
                 </td>
             </tr>
         ))
