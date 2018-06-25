@@ -29,7 +29,7 @@ class TodoForm extends Component {
         const {add, search, description} = this.props
         return (
             <div role='form' className='todoForm'>
-                <Grid cols='12 9 10'>
+                <Grid cols='12 5 6'>
                     <input id='description' className='form-control'
                         placeholder='Adicione uma tarefa'
                             onChange={this.props.changeDescription}
@@ -41,18 +41,22 @@ class TodoForm extends Component {
                     <IconButton style='primary' icon='plus'
                         onClick={() => add(description)}></IconButton>
             
-                    <IconButton style='info' icon='search'
-                        onClick={() => search(description)}></IconButton>
-            
                     <IconButton style='default' icon='close'
                         onClick={this.props.clear}></IconButton>
+                </Grid>
+
+                <Grid cols='12 3 4'>
+                    <input id="search" className='form-control'
+                        placeholder='Digite o que você busca...'
+                        onChange={this.props.search}
+                        value={this.props.searchKey}></input>
                 </Grid>
             </div>
         )
     }
 }
 
-const mapStateToProps = state => ({description: state.todo.description})
+const mapStateToProps = state => ({description: state.todo.description, searchKey: state.todo.searchKey})
 const mapDispatchToProps = dispatch => bindActionCreators({add, changeDescription, search, clear}, dispatch)
  
 export default connect(mapStateToProps, mapDispatchToProps)(TodoForm)

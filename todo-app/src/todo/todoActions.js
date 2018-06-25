@@ -1,11 +1,11 @@
 export const changeDescription = (event) => ({
-    type: 'DESCRIPTION_CHANGED',
+    type: 'DESCRIPTION_CHANGED', 
     payload: event.target.value
 })
 
-export const search = (description) => {
+export const search = (event) => {
    return { type: 'TODO_SEARCHED', 
-            payload: description }
+            payload: event.target.value }
 }
 
 export const add = (description) => {

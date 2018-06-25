@@ -1,5 +1,5 @@
-import update from 'react-addons-update'
-import {get} from 'immutable'
+import update from 'immutability-helper'
+const _ = require('lodash')
 
 const INITIAL_STATE = {description: '', list: [] }
 
@@ -26,8 +26,7 @@ export default (state = INITIAL_STATE, action) => {
                 }
             })
         case 'TODO_SEARCHED':
-            
-            return  {...state}
+            return {...state, list: [...state.list.filter((state) => state.list.includes(() => action.payload))] }
         case 'TODO_REMOVED':
             return {...state, list: [...state.list.slice(0, action.index), ...state.list.slice(action.index + 1)]}
         case 'TODO_CLEAR':
