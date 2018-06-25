@@ -1,7 +1,9 @@
 import update from 'immutability-helper'
 const _ = require('lodash')
 
-const INITIAL_STATE = {description: '', list: [] }
+const list = []
+
+const INITIAL_STATE = {description: '', list}
 
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
@@ -26,7 +28,9 @@ export default (state = INITIAL_STATE, action) => {
                 }
             })
         case 'TODO_SEARCHED':
-            return {...state, list: [...state.list.filter((state) => state.list.includes(() => action.payload))] }
+            const searchList = _.filter(state.list, (o) => _.toLower(o.description).includes(_.toLower(action.payload)))
+            console.log(searchList)
+            return {...state, searchList}
         case 'TODO_REMOVED':
             return {...state, list: [...state.list.slice(0, action.index), ...state.list.slice(action.index + 1)]}
         case 'TODO_CLEAR':
