@@ -3,7 +3,7 @@ const _ = require('lodash')
 
 const list = []
 
-const INITIAL_STATE = {description: '', list}
+const INITIAL_STATE = {description: '', list, filter: list}
 
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
@@ -28,9 +28,10 @@ export default (state = INITIAL_STATE, action) => {
                 }
             })
         case 'TODO_SEARCHED':
-            const searchList = _.filter(state.list, (o) => _.toLower(o.description).includes(_.toLower(action.payload)))
-            console.log(searchList)
-            return {...state, searchList}
+            const searchKey = action.payload || ''
+            state.filter = _.filter(state.list, (o) => _.toLower(o.description).includes(_.toLower(searchKey)))
+            var con = console.log(state.filter)
+            return {...state, filter: state.filter}
         case 'TODO_REMOVED':
             return {...state, list: [...state.list.slice(0, action.index), ...state.list.slice(action.index + 1)]}
         case 'TODO_CLEAR':
