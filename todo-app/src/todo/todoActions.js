@@ -3,11 +3,6 @@ export const changeDescription = (event) => ({
     payload: event.target.value
 })
 
-export const search = (event) => {
-   return { type: 'TODO_SEARCHED', 
-            payload: event.target.value }
-}
-
 export const add = (description) => {
     return [{ type: 'TASK_ADDED' }, clear()]
  }

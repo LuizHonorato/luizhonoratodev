@@ -8,15 +8,15 @@ import {markAsDone, markAsPending, remove} from './todoActions'
 const TodoList = props => {
 
     const renderRows = () => {
-        const filter = props.filter || []
-        return filter.map((todo,index) => (
+        const list = props.list || []
+        return list.map((todo,index) => (
             <tr key={index}>
                 <td className={todo.done ? 'markedAsDone' : ''}>{todo.description}</td>
                 <td>
                     <IconButton style='success' icon='check' hide={todo.done}
                         onClick={() => props.markAsDone(index)}></IconButton>
 
-                    <IconButton style='warning' icon='undo' hide={!todo.done}
+                    <IconButton style='warning' icon='undo' hide={!todo.done} 
                         onClick={() => props.markAsPending(index)}></IconButton>
 
                     <IconButton style='danger' icon='trash-o' hide={!todo.done}
@@ -41,6 +41,6 @@ const TodoList = props => {
     )
 }
 
-const mapStateToProps = state => ({filter: state.todo.filter})
+const mapStateToProps = state => ({list: state.todo.list})
 const mapDispatchToProps = dispatch => bindActionCreators({markAsDone, markAsPending, remove}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList)
