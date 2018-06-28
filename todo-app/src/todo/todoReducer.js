@@ -1,16 +1,14 @@
 import update from 'immutability-helper'
-const _ = require('lodash')
 
-const INITIAL_STATE = {description: '', list: [], done: false}
+const INITIAL_STATE = {description: '', list: []}
 
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case 'DESCRIPTION_CHANGED':
             return {...state, description: action.payload}
         case 'TASK_ADDED':
-            return {...state, list: [...state.list, {description: state.description, done: state.done }]}
+            return {...state, list: [...state.list, {description: state.description, done: false }]}
         case 'MARKED_AS_DONE':
-            
             return update(state, {
                 list: {
                     [action.index]: {

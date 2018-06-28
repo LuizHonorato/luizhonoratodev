@@ -6,7 +6,7 @@ const IconButton = props => {
     return (
         <If test={!props.hide }>
             <button className={'btn btn-' + props.style}
-                onClick={props.onClick}>
+                onClick={props.onClick} disabled={props.active}>{props.children}
                 <i className={'fa fa-'+ props.icon}></i>
             </button>
         </If>

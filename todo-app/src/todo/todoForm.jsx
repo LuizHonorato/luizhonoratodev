@@ -4,7 +4,8 @@ import {bindActionCreators} from 'redux'
 
 import Grid from '../template/grid'
 import IconButton from '../template/iconButton'
-import {add, changeDescription, clear} from './todoActions'
+import ButtonContainer from './buttonContainer'
+import {add, changeDescription, clear, VisibilityFilters} from './todoActions'
 
 class TodoForm extends Component {
     constructor(props) {
@@ -35,10 +36,16 @@ class TodoForm extends Component {
             
                 <Grid cols='12 3 2'>
                     <IconButton style='primary' icon='plus'
-                        onClick={() => add(description)}></IconButton>
+                        onClick={this.props.add}></IconButton>
             
                     <IconButton style='default' icon='close'
                         onClick={this.props.clear}></IconButton>
+                </Grid>
+
+                <Grid cols='12 3 5'>
+                    <ButtonContainer className='filter-area' style='primary' filter={VisibilityFilters.SHOW_ALL}>Todas</ButtonContainer>
+                    <ButtonContainer className='filter-area' style='primary' filter={VisibilityFilters.SHOW_PENDING}>Pendentes</ButtonContainer>
+                    <ButtonContainer className='filter-area' style='primary' filter={VisibilityFilters.SHOW_DONE}>Realizadas</ButtonContainer>
                 </Grid>
             </div>
         )
@@ -46,6 +53,6 @@ class TodoForm extends Component {
 }
 
 const mapStateToProps = state => ({description: state.todo.description})
-const mapDispatchToProps = dispatch => bindActionCreators({add, changeDescription, clear}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({add, changeDescription, clear, VisibilityFilters}, dispatch)
  
 export default connect(mapStateToProps, mapDispatchToProps)(TodoForm)

@@ -3,7 +3,7 @@ export const changeDescription = (event) => ({
     payload: event.target.value
 })
 
-export const add = (description) => {
+export const add = () => {
     return [{ type: 'TASK_ADDED' }, clear()]
  }
 
@@ -21,4 +21,15 @@ export const add = (description) => {
 
  export const clear = () => {
      return { type: 'TODO_CLEAR'}
+ }
+
+ export const setVisibilityFilter = filter => ({
+     type: 'SET_VISIBILITY_FILTER',
+     filter
+ })
+
+ export const VisibilityFilters = {
+     SHOW_ALL: 'SHOW_ALL',
+     SHOW_DONE: 'SHOW_DONE',
+     SHOW_PENDING: 'SHOW_PENDING'
  }
