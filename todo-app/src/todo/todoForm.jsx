@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import toastr from 'toastr'
+import 'modules/toastr/build/toastr.min.css'
 
 import Grid from '../template/grid'
 import ButtonContainer from './buttonContainer'
@@ -13,7 +15,7 @@ const AddTodo = ({dispatch}) => {
                 <form onSubmit={e => {
                     e.preventDefault()
                     if(!input.value.trim()) {
-                        return
+                        return toastr.error('A descrição da tarefa não pode estar vazia, por favor preencha-a.', 'Atenção!')
                     }
                     dispatch(add(input.value))
                     input.value = ''

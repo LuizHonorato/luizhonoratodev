@@ -5,11 +5,12 @@ const todos = (state = [], action) => {
         case 'TASK_ADDED':
             return [
                 ...state,
-                {
-                    description: action.text,
-                    done: false
-                }
-            ]
+                    {
+                        description: action.text,
+                        done: false
+                    }
+                ]
+                //toastr.error('A descrição da tarega não pode estar fazia, preencha-a por favor.', 'Atenção!')
         case 'MARKED_AS_DONE':
             return update(state, {
                 [action.index]: {
