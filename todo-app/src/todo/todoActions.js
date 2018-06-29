@@ -1,10 +1,5 @@
-export const changeDescription = (event) => ({
-    type: 'DESCRIPTION_CHANGED', 
-    payload: event.target.value
-})
-
-export const add = () => {
-    return [{ type: 'TASK_ADDED' }, clear()]
+export const add = (text) => {
+    return { type: 'TASK_ADDED', text }
  }
 
  export const markAsDone = (index) => {
@@ -16,11 +11,7 @@ export const add = () => {
  }
 
  export const remove = (index) => {
-     return {type: 'TODO_REMOVED', index}
- }
-
- export const clear = () => {
-     return { type: 'TODO_CLEAR'}
+    return { type: 'TASK_REMOVED', index }
  }
 
  export const setVisibilityFilter = filter => ({

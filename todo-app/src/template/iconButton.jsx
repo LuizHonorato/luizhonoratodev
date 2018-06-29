@@ -5,7 +5,7 @@ import If from './if'
 const IconButton = props => {
     return (
         <If test={!props.hide }>
-            <button className={'btn btn-' + props.style}
+            <button type={props.type} className={'btn btn-' + props.style}
                 onClick={props.onClick} disabled={props.active}>{props.children}
                 <i className={'fa fa-'+ props.icon}></i>
             </button>
