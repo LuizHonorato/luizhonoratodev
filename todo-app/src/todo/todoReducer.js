@@ -1,5 +1,4 @@
 import update from 'immutability-helper'
-const dotProp = require('dot-prop-immutable')
 
 const todos = (state = [], action) => {
     switch (action.type) {
