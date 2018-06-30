@@ -6,25 +6,25 @@ const todos = (state = [], action) => {
             return [
                 ...state,
                     {
+                        id: action.id,
                         description: action.text,
                         done: false
                     }
                 ]
-                //toastr.error('A descrição da tarega não pode estar fazia, preencha-a por favor.', 'Atenção!')
         case 'MARKED_AS_DONE':
             return update(state, {
-                [action.index]: {
+                [action.id]: {
                     done: {$set: true}
                 }
             })
         case 'MARKED_AS_PENDING':
             return update(state, {
-                [action.index]: {
+                [action.id]: {
                     done: {$set: false}
             }
         })
         case 'TASK_REMOVED':
-            return state.filter((item, index) => index !== action.index )
+            return state.filter((item, id) => id !== action.id )
         default:
             return state
     }

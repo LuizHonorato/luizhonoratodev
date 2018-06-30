@@ -1,17 +1,19 @@
+let nextTodoId = 0
+
 export const add = (text) => {
-    return { type: 'TASK_ADDED', text }
+    return { type: 'TASK_ADDED', id: nextTodoId++, text }
  }
 
- export const markAsDone = (index) => {
-    return { type: 'MARKED_AS_DONE', index }
+ export const markAsDone = (id) => {
+    return { type: 'MARKED_AS_DONE', id }
  }
 
- export const markAsPending = (index) => {
-    return { type: 'MARKED_AS_PENDING', index }
+ export const markAsPending = (id) => {
+    return { type: 'MARKED_AS_PENDING', id }
  }
 
- export const remove = (index) => {
-    return { type: 'TASK_REMOVED', index }
+ export const remove = (id) => {
+    return { type: 'TASK_REMOVED', id }
  }
 
  export const setVisibilityFilter = filter => ({

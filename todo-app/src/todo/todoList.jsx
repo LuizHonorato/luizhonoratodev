@@ -15,18 +15,18 @@ const TodoList = ({todos, markAsDone, markAsPending, remove, dispatch, visibilit
                 </tr>
             </thead>
             <tbody>
-                {todos.map((todo,index) => (
-                    <tr key={index}>
+                {todos.map((todo) => (
+                    <tr key={todo.id}>
                     <td className={todo.done ? 'markedAsDone' : ''}>{todo.description}</td>
                     <td>
                     <IconButton style='success' icon='check' hide={todo.done}
-                        onClick={() => markAsDone(index)}></IconButton>
+                        onClick={() => markAsDone(todo.id)}></IconButton>
 
                     <IconButton style='warning' icon='undo' hide={!todo.done} 
-                        onClick={() => markAsPending(index)}></IconButton>
+                        onClick={() => markAsPending(todo.id)}></IconButton>
 
                     <IconButton style='danger' icon='trash-o' hide={!todo.done} active={visibilityFilter == VisibilityFilters.SHOW_DONE}
-                        onClick={() => remove(index)}></IconButton>
+                        onClick={() => remove(todo.id)}></IconButton>
                     </td>
                 </tr>
             ))}
