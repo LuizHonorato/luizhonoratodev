@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import IconButton from '../template/iconButton'
-import {markAsDone, markAsPending, remove, VisibilityFilters} from './todoActions'
+import {edit, markAsDone, markAsPending, remove, VisibilityFilters} from './todoActions'
 
 const TodoList = ({todos, markAsDone, markAsPending, remove, dispatch, visibilityFilter}) => {
 
@@ -25,7 +25,7 @@ const TodoList = ({todos, markAsDone, markAsPending, remove, dispatch, visibilit
                     <IconButton style='warning' icon='undo' hide={!todo.done} 
                         onClick={() => markAsPending(todo.id)}></IconButton>
 
-                    <IconButton style='danger' icon='trash-o' hide={!todo.done} active={visibilityFilter == VisibilityFilters.SHOW_DONE}
+                    <IconButton style='danger' icon='trash-o' hide={!todo.done}
                         onClick={() => remove(todo.id)}></IconButton>
                     </td>
                 </tr>

@@ -22,7 +22,7 @@ const AddTodo = ({dispatch}) => {
                 }}>
                 <Grid cols='12 9 10'>
                     <input ref={node => input = node} className='form-control'
-                        placeholder='Adicione uma tarefa'></input>
+                        placeholder='O que você gostaria de fazer hoje?'></input>
                 </Grid>
             
                 <Grid cols='12 3 2'>

@@ -1,12 +1,20 @@
 import update from 'immutability-helper'
 
-const todos = (state = [], action) => {
+const initialState = [
+    {
+        description: 'Estudar React e Redux!',
+        done: false,
+        id: 0
+    }
+]
+
+export default function todos(state = initialState, action) {
     switch (action.type) {
         case 'TASK_ADDED':
             return [
                 ...state,
                     {
-                        id: action.id,
+                        id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
                         description: action.text,
                         done: false
                     }
@@ -24,10 +32,8 @@ const todos = (state = [], action) => {
             }
         })
         case 'TASK_REMOVED':
-            return state.filter((item, id) => id !== action.id )
+            return state.filter(todo => todo.id !== action.id)
         default:
             return state
     }
 }
-
-export default todos

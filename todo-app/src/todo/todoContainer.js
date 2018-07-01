@@ -16,6 +16,6 @@ const getVisibleTodos = (todos, filter) => {
 }
 
 const mapStateToProps = state => ({todos: getVisibleTodos(state.todos, state.visibilityFilter)})
-const mapDispatchToProps = dispatch => ({markAsDone: index => dispatch(markAsDone(index)), markAsPending: index => dispatch(markAsPending(index)), remove: index => dispatch(remove(index)) })
+const mapDispatchToProps = dispatch => ({markAsDone: id => dispatch(markAsDone(id)), markAsPending: id => dispatch(markAsPending(id)), remove: id => dispatch(remove(id)) })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList)
