@@ -1,0 +1,1 @@
+export const post = (text) => { return { type: 'POST_COMMENTED', text } }
