@@ -8,11 +8,22 @@ export default function comments(state = initialState, action) {
                     {
                         id: action.id,
                         post: action.text,
-                        like: false
+                        like: false,
+                        dislike: false
                     }
             ]
         case 'POST_DELETED':
-            return console.log(action.id), state.filter(comment => comment.id !== action.id)
+            return state.filter(comment => comment.id !== action.id)
+        case 'POST_LIKED':
+            return state.map(comment =>
+                (comment.id === action.id)
+                 ? {...comment, like: !comment.like}
+                 : comment)
+        case 'POST_DISLIKED':
+            return state.map(comment =>
+                (comment.id === action.id)
+                ? {...comment, dislike: !comment.dislike}
+                : comment)
         default:
             return state
     }

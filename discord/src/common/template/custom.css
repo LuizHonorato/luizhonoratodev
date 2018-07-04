@@ -1,4 +1,5 @@
 #commentBox {
+    margin-top: 5px;
     font-size: 28px;
 }
 
@@ -14,6 +15,11 @@
     font-size: 18px;
 }
 
-.close-button {
+.like-btn {
     margin-left: 5px;
+    padding: 0;
+}
+
+.row-comment{
+    margin-bottom: 0;
 }
