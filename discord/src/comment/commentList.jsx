@@ -9,7 +9,7 @@ const CommentList = ({comments}) => {
         <div>
             <h4 className='title-list'>Comentários:</h4>
             {comments.map((comment) => (
-                <CommentBox key={comment.id} comment={comment}  />       
+                    <CommentBox key={comment.id} comment={comment}  />      
             ))}
         </div>
     )

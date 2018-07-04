@@ -6,11 +6,13 @@ export default function comments(state = initialState, action) {
             return [
                 ...state,
                     {
-                        id: state.reduce((maxId, comment) => Math.max(comment.id, maxId), -1) + 1,
+                        id: action.id,
                         post: action.text,
                         like: false
                     }
             ]
+        case 'POST_DELETED':
+            return console.log(action.id), state.filter(comment => comment.id !== action.id)
         default:
             return state
     }
