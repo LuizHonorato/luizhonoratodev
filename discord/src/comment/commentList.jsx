@@ -25,13 +25,13 @@ const CommentList = ({comments, remove, like, dislike}) => {
                     </div>
                     <div className='row'>
                         <div className='col s1'>
-                            <a onClick={() => like(comment.id)} className='like-btn'><img src={!comment.like ? likeImage: heartImage}  alt="Curtir"/>(0)</a>
+                            <a onClick={() => like(comment.id)} className='like-btn'><img src={!comment.like ? likeImage: heartImage}  alt="Curtir"/></a>
                         </div>
                         <div className='col s1'>
-                            <a onClick={() => dislike(comment.id)} className='like-btn'><img src={!comment.dislike ? heartBrokenImage : dislikeImage}  alt="Curtir"/>(0)</a>
+                            <a onClick={() => dislike(comment.id)} className='like-btn'><img src={!comment.dislike ? heartBrokenImage : dislikeImage}  alt="Descurtir"/></a>
                         </div>
                         <div className='col s1'>
-                            <a className='like-btn'><img src={talkImage}  alt="Curtir"/>(0)</a>
+                            <a className='like-btn'><img src={talkImage}  alt="Responder"/></a>
                         </div>
                     </div>
                 </div>      

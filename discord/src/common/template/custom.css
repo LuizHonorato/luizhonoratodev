@@ -23,3 +23,15 @@
 .row-comment{
     margin-bottom: 0;
 }
+
+.collapsible {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.resp-input {
+    display: none;
+    overflow: hidden;
+}
