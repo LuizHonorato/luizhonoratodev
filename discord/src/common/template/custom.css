@@ -18,20 +18,27 @@
 .like-btn {
     margin-left: 5px;
     padding: 0;
+    cursor: pointer;
 }
 
 .row-comment{
     margin-bottom: 0;
 }
 
-.collapsible {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 0;
+
+.action-resp {
+    margin-right: 15px;
+    padding: 0 10px 0 10px;
 }
 
-.resp-input {
-    display: none;
-    overflow: hidden;
+.action-cancel {
+    margin-right: 15px;
+    cursor: pointer;
+    padding: 0 10px 0 10px;
+    background: #AFB2B4
+}
+
+.action-cancel:hover {
+    background: #AFB2B4;
+    color: black;
 }

@@ -11,6 +11,7 @@ import dislikeImage from '../common/img/dislike.png'
 const CommentList = ({comments, remove, like, dislike}) => {
 
     return (
+        
         <div>
             <h4 className='title-list'>Comentários:</h4>
             {comments.map((comment) => (
@@ -30,8 +31,8 @@ const CommentList = ({comments, remove, like, dislike}) => {
                         <div className='col s1'>
                             <a onClick={() => dislike(comment.id)} className='like-btn'><img src={!comment.dislike ? heartBrokenImage : dislikeImage}  alt="Descurtir"/></a>
                         </div>
-                        <div className='col s1'>
-                            <a className='like-btn'><img src={talkImage}  alt="Responder"/></a>
+                        <div className='col s8'>
+                            <a className='like-btn modal-trigger' id='resp'><img src={talkImage}  alt="Responder"/></a>
                         </div>
                     </div>
                 </div>      
