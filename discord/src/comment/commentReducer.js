@@ -8,8 +8,8 @@ export default function comments(state = initialState, action) {
                     {
                         id: action.id,
                         post: action.text,
-                        like: false,
-                        dislike: false
+                        liked: false,
+                        disliked: false
                     }
             ]
         case 'POST_DELETED':
@@ -17,12 +17,12 @@ export default function comments(state = initialState, action) {
         case 'POST_LIKED':
             return state.map(comment =>
                 (comment.id === action.id)
-                 ? {...comment, like: !comment.like}
+                 ? {...comment, liked: !comment.liked}
                  : comment)
         case 'POST_DISLIKED':
             return state.map(comment =>
                 (comment.id === action.id)
-                ? {...comment, dislike: !comment.dislike}
+                ? {...comment, disliked: !comment.disliked}
                 : comment)
         default:
             return state
