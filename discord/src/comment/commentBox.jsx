@@ -32,7 +32,7 @@ class CommentBox extends Component {
                     <div className='col s8'>
                         <Modal
                             trigger={ <a className='like-btn modal-trigger' id='resp'><img src={talkImage}  alt="Responder"/></a>}
-                            actions={ <a class="btn blue">Responder</a> } >
+                            actions={ <a className="btn blue">Responder</a> } >
                             <textarea placeholder='Escreva aqui sua resposta...' className='materialize-textarea'></textarea>
                         </Modal>
                     </div>
