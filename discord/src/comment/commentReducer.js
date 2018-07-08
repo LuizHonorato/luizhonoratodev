@@ -2,14 +2,16 @@ const initialState = []
 
 export default function comments(state = initialState, action) {
     switch (action.type){
-        case 'POST_COMMENTED':
+        case 'POST_ADDED':
             return [
                 ...state,
                     {
                         id: action.id,
+                        user: action.user,
                         post: action.text,
                         liked: false,
-                        disliked: false
+                        disliked: false,
+        
                     }
             ]
         case 'POST_DELETED':

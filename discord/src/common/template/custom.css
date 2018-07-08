@@ -3,6 +3,14 @@
     font-size: 28px;
 }
 
+.comment-box {
+    margin-bottom: 40px;
+}
+
+.user {
+    font-weight: bold;
+}
+
 .title-list {
     margin-top: 50px;
     color: #AFB2B4;
@@ -16,29 +24,7 @@
 }
 
 .like-btn {
+    margin-top: 10px;
     margin-left: 5px;
-    padding: 0;
     cursor: pointer;
-}
-
-.row-comment{
-    margin-bottom: 0;
-}
-
-
-.action-resp {
-    margin-right: 15px;
-    padding: 0 10px 0 10px;
-}
-
-.action-cancel {
-    margin-right: 15px;
-    cursor: pointer;
-    padding: 0 10px 0 10px;
-    background: #AFB2B4
-}
-
-.action-cancel:hover {
-    background: #AFB2B4;
-    color: black;
 }

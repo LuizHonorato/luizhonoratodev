@@ -4,22 +4,29 @@ import {connect} from 'react-redux'
 import {post} from './commentActions'
 
 const AddPost = ({dispatch}) => {
-    let textarea
+    let input
+    let user
     return (
         <div className='row'>
-            <form className='col s12 z-depth-2'
+            <h1 className='center-align'>Discord aqui...</h1>
+            <form className='col s12 center-align'
                 onSubmit={e => {
                     e.preventDefault()
-                    if(!textarea.value.trim()){
+                    if(!input.value.trim()){
                         return
                     }
-                    dispatch(post(textarea.value))
-                    textarea.value = ''
+                    dispatch(post(input.value, user.value))
+                    user.value = ''
+                    input.value = ''
                 }}>
                 <div className='row'>
-                    <div className='input-field col s12'>
-                        <textarea ref={node => textarea = node}  id='commentBox' className='materialize-textarea'></textarea>
-                        <label htmlFor='commentBox'>Sua ideia:</label>
+                    <div className='input-field col s6'>
+                        <input ref={node => user = node} type="text" id='commentBox'/>
+                        <label htmlFor='commentBox'>Qual é o seu nome?</label>
+                    </div>
+                    <div className='input-field col s6'>
+                        <input ref={node => input = node} type='text'  id='commentBox' />
+                        <label htmlFor='commentBox'>O que você está pensando agora?</label>
                     </div>
                 </div>
                 <div className='row'>
