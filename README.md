@@ -1,1 +1,1 @@
-Site pessoal para apresentação de projetos em REACT/REDUX E REACT NATIVE!
+Site pessoal para apresentação de projetos em REACT/REDUX E REACT NATIVE e outros exemplos do ecossistema Javascript!
